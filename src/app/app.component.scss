@@ -13,10 +13,10 @@
 }
 
 .item {
-  width: 150px;
-  height: 150px;
+  width: 345px;
+  height: 319px;
   background-color: antiquewhite;
-  margin-right: 20px;
+  margin-right: 45px;
 }
 
 @mixin slide-animation($position, $prevPosition, $name) {
@@ -24,11 +24,11 @@
   animation-name: $name;
   @keyframes #{$name} {
     from {
-      transform: translateX(calc($prevPosition * -170px));
+      transform: translateX(calc($prevPosition * -390px));
     }
 
     to {
-      transform: translateX(calc($position * -170px));
+      transform: translateX(calc($position * -390px));
     }
   }
 }
