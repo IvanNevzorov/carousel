@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.item {
+  width: 150px;
+  height: 150px;
+  background-color: antiquewhite;
+  margin-right: 20px;
+}
+
+@mixin slide-animation($position, $prevPosition, $name) {
+  animation-duration: 3s;
+  animation-name: $name;
+  @keyframes #{$name} {
+    from {
+      transform: translateX(calc($prevPosition * -170px));
+    }
+
+    to {
+      transform: translateX(calc($position * -170px));
+    }
+  }
+}
+
+.position-right {
+  @include slide-animation(1, 0, position-right);
+}
+
+.position-double-right {
+  @include slide-animation(2, 1, position-double-right);
+}
+
+.position-left {
+  @include slide-animation(1, 2, position-left);
+}
+
+.position-double-left {
+  @include slide-animation(0, 1, position-double-left);
+}
